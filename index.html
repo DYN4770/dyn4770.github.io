@@ -67,6 +67,13 @@ button:focus-visible{outline:2px solid #b8d8ff;outline-offset:2px}
   .card{padding:17px}
 }
 
+
+.timer-grid{grid-template-columns:repeat(auto-fit,minmax(235px,1fr))}
+.sunfire-card{border-color:#597ba5;background:linear-gradient(145deg,#203b60,#142743)}
+.sunfire-card h3{margin:7px 0 2px;color:#f0f6ff}
+.sunfire-card .timer{color:#c5e2ff}
+.sunfire-card small{display:block;margin-top:5px}
+
 </style></head>
 <body>
 <header><nav>
@@ -82,7 +89,12 @@ button:focus-visible{outline:2px solid #b8d8ff;outline-offset:2px}
 <section id="home" class="page">
 <div class="hero"><div class="eyebrow" data-i="eyebrow">WHITEOUT SURVIVAL • DYN ALLIANCE HUB</div><h1 data-i="title">Stronger Together. Unstoppable as One.</h1><p data-i="subtitle">A shared home for guides, event strategy and alliance coordination.</p><input id="search" class="search" data-i-ph="search" placeholder="Search guides, events and strategies..."></div>
 <div class="sectionhead"><h2 data-i="timers">Live Server Timers · UTC</h2><span class="pill">UTC</span></div>
-<div class="grid"><div class="card"><span class="tag">◷ DAILY RESET</span><div class="timer" id="reset">--:--:--</div><small class="muted" data-i="resetnote">Next reset · 00:00 UTC</small></div><div class="card"><span class="tag">⚡ PET STAMINA</span><div class="timer">00:00 / 12:00</div><small class="muted">120 base stamina</small></div><div class="card"><span class="tag">🔭 LIGHTHOUSE INTEL</span><div class="timer">00:00 / 08:00 / 16:00</div><small class="muted">UTC schedule</small></div></div>
+<div class="grid timer-grid">
+<div class="card"><span class="tag">◷ DAILY SERVER RESET</span><div class="timer" id="reset">--:--:--</div><small class="muted" data-i="resetnote">Next reset · 00:00 UTC</small></div>
+<div class="card"><span class="tag">⚡ PET STAMINA</span><div class="timer">120</div><small class="muted">Base stamina · Information only</small></div>
+<div class="card"><span class="tag">🔭 LIGHTHOUSE INTEL</span><div class="timer">00:00 · 08:00 · 16:00</div><small class="muted">UTC schedule · Information only</small></div>
+<div class="card sunfire-card"><span class="tag">🏰 SUNFIRE CASTLE – FIRST BATTLE</span><h3>Defend Phase</h3><div class="timer" id="sunfire-countdown">--d --:--:--</div><small class="muted">December 8, 2026 · 11:00 UTC</small><small class="muted">Controlled by Phaethon Mercenaries</small></div>
+</div>
 <div class="sectionhead"><h2 data-i="featured">Featured guides</h2><span class="pill public" data-i="publiclabel">PUBLIC</span></div><div class="grid" id="featured"></div>
 <div class="sectionhead"><h2 data-i="mixedtitle">Explore DYN Command Center</h2></div><div class="grid"><div class="card"><span class="pill public" data-i="publiclabel">PUBLIC</span><h3 data-i="publicspace">Knowledge & Guides</h3><p data-i="publicdesc">Event guides, strategies and useful information for the DYN community.</p></div><div class="card"><span class="pill public" data-i="publiclabel">PUBLIC</span><h3 data-i="memberspace">Alliance Updates</h3><p data-i="memberdesc">Announcements, event coordination and leadership updates shared with visitors.</p></div></div>
 </section>
@@ -113,6 +125,21 @@ function showProposal(type){document.querySelector("#ptype").value=type==="plan"
 function submitProposal(){let s=document.querySelector("#psubject").value.trim(),d=document.querySelector("#pdetails").value.trim();if(!s||!d){document.querySelector("#submitstatus").textContent="Please add a title and details.";return}proposals.unshift({type:document.querySelector("#ptype").value,subject:s,details:d,status:"pending"});document.querySelector("#psubject").value="";document.querySelector("#pdetails").value="";document.querySelector("#submitstatus").textContent=t("sent");renderQueue()}
 function renderQueue(){let q=document.querySelector("#queue");if(!q)return;q.innerHTML=proposals.length?proposals.map((p,i)=>`<article class="card"><span class="tag">${p.type}</span><h3>${escapeHtml(p.subject)}</h3><p>${escapeHtml(p.details)}</p><span class="status">${p.status==="approved"?"Approved":t("pending")}</span><div class="toolbar" style="margin-top:12px"><button class="action primary" onclick="approve(${i})">${t("approve")}</button><button class="action subtle" onclick="removeProposal(${i})">${t("remove")}</button></div></article>`).join(""):`<div class="empty">${t("empty")}</div>`}
 function approve(i){proposals[i].status="approved";renderQueue()}function removeProposal(i){proposals.splice(i,1);renderQueue()}function escapeHtml(s){return s.replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
-function tick(){let now=new Date(),next=new Date();next.setUTCHours(24,0,0,0);let s=Math.max(0,Math.floor((next-now)/1000));document.querySelector("#reset").textContent=[Math.floor(s/3600),Math.floor(s%3600/60),s%60].map(x=>String(x).padStart(2,"0")).join(":")}
+function formatCountdown(seconds, withDays=false){
+  seconds=Math.max(0,Math.floor(seconds));
+  const d=Math.floor(seconds/86400), h=Math.floor(seconds%86400/3600), m=Math.floor(seconds%3600/60), s=seconds%60;
+  const clock=[h,m,s].map(x=>String(x).padStart(2,"0")).join(":");
+  return withDays?`${d}d ${clock}`:clock;
+}
+const SUNFIRE_TARGET_UTC=Date.UTC(2026,11,8,11,0,0);
+function tick(){
+  const now=new Date(),next=new Date();
+  next.setUTCHours(24,0,0,0);
+  const resetSeconds=Math.max(0,Math.floor((next-now)/1000));
+  document.querySelector("#reset").textContent=formatCountdown(resetSeconds);
+  const sunfireSeconds=Math.max(0,Math.floor((SUNFIRE_TARGET_UTC-now.getTime())/1000));
+  const sunfire=document.querySelector("#sunfire-countdown");
+  sunfire.textContent=sunfireSeconds>0?formatCountdown(sunfireSeconds,true):"Defend Phase started";
+}
 renderGuides();setLang("en");tick();setInterval(tick,1000);
 </script></body></html>
