@@ -140,6 +140,13 @@ header{background:rgba(16,13,34,.95);border-bottom-color:#41355f}
  .info-card strong{font-size:19px}
 }
 
+
+/* GTranslate language selector */
+#gtranslate_wrapper{display:flex;align-items:center;margin-left:4px}
+#gtranslate_wrapper .gt_selector,
+#gtranslate_wrapper select{background:#112d44!important;color:#eff9ff!important;border:1px solid #2b526b!important;border-radius:12px!important;padding:9px 32px 9px 12px!important;font:inherit!important;min-height:40px;max-width:190px}
+#gtranslate_wrapper option{background:#10283d;color:#eff9ff}
+@media(max-width:640px){#gtranslate_wrapper{width:100%;margin:4px 0 0}#gtranslate_wrapper select{width:100%;max-width:none}}
 </style></head>
 <body>
 <header><nav>
@@ -149,7 +156,8 @@ header{background:rgba(16,13,34,.95);border-bottom-color:#41355f}
 <button class="navbtn" data-page="events" data-i="events">Events</button>
 <button class="navbtn" data-page="alliance" data-i="alliance">Alliance Space</button>
 <button class="navbtn" data-page="proposals" data-i="proposals">Suggestions</button>
-<select class="lang" id="language" aria-label="Language"><option value="en">🇬🇧 English</option><option value="pl">🇵🇱 Polski</option><option value="ar">🇸🇦 العربية</option><option value="ko">🇰🇷 한국어</option></select>
+<div id="gtranslate_wrapper" aria-label="Choose website language"></div>
+<select class="lang" id="language" aria-label="Language" hidden><option value="en">🇬🇧 English</option><option value="pl">🇵🇱 Polski</option><option value="ar">🇸🇦 العربية</option><option value="ko">🇰🇷 한국어</option></select>
 </nav></header>
 <main>
 <section id="home" class="page">
@@ -310,4 +318,15 @@ function tick(){
   sunfire.textContent=sunfireSeconds>0?formatCountdown(sunfireSeconds,true):"Defend Phase started";
 }
 renderGuides();setLang("en");tick();setInterval(tick,1000);
-</script></body></html>
+</script>
+<!-- GTranslate automatic website translation -->
+<script>
+window.gtranslateSettings = {
+  "default_language": "en",
+  "languages": ["en","af","sq","am","ar","hy","az","eu","be","bn","bs","bg","ca","ceb","ny","zh-CN","zh-TW","co","hr","cs","da","nl","eo","et","tl","fi","fr","fy","gl","ka","de","el","gu","ht","ha","haw","iw","hi","hmn","hu","is","ig","id","ga","it","ja","jw","kn","kk","km","ko","ku","ky","lo","la","lv","lt","lb","mk","mg","ms","ml","mt","mi","mr","mn","my","ne","no","ps","fa","pl","pt","pa","ro","ru","sm","gd","sr","st","sn","sd","si","sk","sl","so","es","su","sw","sv","tg","ta","te","th","tr","uk","ur","uz","vi","cy","xh","yi","yo","zu"],
+  "wrapper_selector": "#gtranslate_wrapper"
+};
+</script>
+<script src="https://cdn.gtranslate.net/widgets/latest/dropdown.js" defer></script>
+
+</body></html>
