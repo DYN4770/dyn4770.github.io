@@ -188,7 +188,7 @@ header{background:rgba(16,13,34,.95);border-bottom-color:#41355f}
 <div class="sectionhead"><h2 data-i="mixedtitle">Explore DYN Command Center</h2></div><div class="grid"><div class="card"><span class="pill public" data-i="publiclabel">PUBLIC</span><h3 data-i="publicspace">Knowledge & Guides</h3><p data-i="publicdesc">Event guides, strategies and useful information for the DYN community.</p></div><div class="card"><span class="pill public" data-i="publiclabel">PUBLIC</span><h3 data-i="memberspace">Alliance Updates</h3><p data-i="memberdesc">Announcements, event coordination and leadership updates shared with visitors.</p></div></div>
 </section>
 <section id="knowledge" class="page hidden"><div class="sectionhead"><h2 data-i="knowtitle">Knowledge Base</h2><span class="pill public">PUBLIC</span></div><div class="notice" data-i="knowhint">Public guides can be read by anyone. Community members can suggest corrections or new guides.</div><div class="grid" id="guidelist" style="margin-top:14px"></div></section>
-<section id="events" class="page hidden"><div class="sectionhead"><h2 data-i="eventtitle">Event Center</h2><span class="pill public">PUBLIC</span></div><div class="notice" data-i="eventhint">Public event guides and general schedules. Alliance-specific assignments belong in Alliance Space.</div><div class="grid" style="margin-top:14px"><article class="card"><span class="tag">EVENT GUIDE</span><h3>Alliance Championship</h3><p data-i="acdesc">Registration, lane strategy, battle phases, tiers and shop.</p><button class="action subtle" onclick="openGuide('ac')" data-i="read">Read guide →</button></article><article class="card"><span class="tag">BATTLE GUIDE</span><h3>Foundry Battle</h3><p data-i="foundrydesc">Battlefield overview, building control and team assignments.</p><button class="action subtle" onclick="openGuide('foundry')" data-i="read">Read guide →</button></article><article class="card"><span class="tag">EVENT GUIDE</span><h3>Bear Trap / Crazy Joe</h3><p data-i="trapdesc">Rallies, formations, timing and participation tips.</p><button class="action subtle" onclick="openGuide('bear')" data-i="read">Read guide →</button></article></div></section>
+<section id="events" class="page hidden"><div class="sectionhead"><h2 data-i="eventtitle">Event Center</h2><span class="pill public">PUBLIC</span></div><div class="notice" data-i="eventhint">Public event guides and general schedules. Alliance-specific assignments belong in Alliance Space.</div><div class="grid" style="margin-top:14px"><article class="card"><span class="tag">EVENT GUIDE</span><h3>Alliance Championship</h3><p data-i="acdesc">Registration, lane strategy, battle phases, tiers and shop.</p><button class="action subtle" onclick="openGuide('ac')" data-i="read">Read guide →</button></article><article class="card"><span class="tag">BATTLE GUIDE</span><h3>Foundry Battle</h3><p data-i="foundrydesc">Battlefield overview, building control and team assignments.</p><button class="action subtle" onclick="openGuide('foundry')" data-i="read">Read guide →</button></article><article class="card"><span class="tag">EVENT GUIDE</span><h3>Bear Trap</h3><p data-i="trapdesc">Rallies, formations, timing and participation tips.</p><button class="action subtle" onclick="openGuide('bear')" data-i="read">Read guide →</button></article><article class="card"><span class="tag">EVENT GUIDE</span><h3>Crazy Joe</h3><p>20-wave defense, troop swaps, HQ formations and scoring strategy.</p><button class="action subtle" onclick="openGuide('crazyjoe')" data-i="read">Read guide →</button></article></div></section>
 <section id="alliance" class="page hidden"><div class="sectionhead"><h2 data-i="alliancetitle">Alliance Space</h2><span class="pill public" data-i="publiclabel">PUBLIC</span></div><div class="notice" data-i="demo">Public information space for DYN updates, event coordination and leadership announcements. Do not post confidential information here.</div><div class="split" style="margin-top:14px"><div class="card"><h3 data-i="ops">Operations & assignments</h3><p data-i="opsdesc">Event owners, participant lists, rally leads and preparation notes.</p><div class="row"><b>Next event plan</b><span class="status">Not configured</span></div><div class="row"><b>R4 / R5 decisions</b><span class="status">Workspace draft</span></div><button class="action primary" onclick="showProposal('plan')" data-i="suggestplan">Suggest a plan</button></div><div class="card"><h3 data-i="leadership">Leadership board</h3><p data-i="leadershipdesc">Responsibilities, diplomacy contacts, polls and follow-ups.</p><div class="row"><b>Event coordinators</b><span class="muted">To be assigned</span></div><div class="row"><b>Alliance announcements</b><span class="muted">To be added</span></div></div></div></section>
 <section id="proposals" class="page hidden"><div class="sectionhead"><h2 data-i="proposaltitle">Community Suggestions</h2><span class="pill public" data-i="openlabel">OPEN TO ALL</span></div><div class="notice" data-i="proposalhint">Anyone can suggest a new guide, correction or event idea. R4/R5 review and approve changes before they become official.</div><div class="card" style="margin-top:14px"><h3 data-i="submitidea">Submit an idea</h3><label data-i="type">Suggestion type</label><select id="ptype" class="field"><option value="New guide">New guide</option><option value="Correction">Correction</option><option value="Event idea">Event idea</option><option value="Alliance plan">Alliance plan</option></select><label data-i="subject">Title</label><input id="psubject" class="field" placeholder="Short title"><label data-i="details">Details</label><textarea id="pdetails" class="field" placeholder="Describe your suggestion..."></textarea><button class="action primary" onclick="submitProposal()" data-i="submit">Send suggestion</button><p class="status" id="submitstatus"></p></div><div class="sectionhead"><h2 data-i="queue">Suggestion queue (local demo)</h2></div><div id="queue" class="grid"></div></section>
 </main>
@@ -289,6 +289,112 @@ function bearGuide(){return `
 <ul><li>Rally Captain: use Natalia, Molly and Alonso.</li><li>Rally Joiner: Jessie, Jasser, Seo-yoon or Jeronimo in the first slot.</li><li>Only the first hero's top-right Expedition Skill counts for the joiner bonus.</li><li>Four joiner skills are selected based on skill level.</li><li>Save your formations before the event.</li><li>Keep the Rally window open to join faster.</li><li>Check the Rally Bonus panel if you want to verify the selected skills.</li></ul>
 <p><b>DYN — Stronger Together. Unstoppable as One.</b></p>
 </div>`}
+function crazyJoeGuide(){return `
+<style>
+.cj-guide h3{color:#c9a5ff;margin:22px 0 8px;font-size:19px}.cj-guide h4{color:#a9dcff;margin:15px 0 6px}.cj-guide p,.cj-guide li{color:#d9e8f5}.cj-guide ul,.cj-guide ol{padding-left:22px}.cj-guide .rule{border:1px solid #7957b7;background:#211b3c;border-radius:12px;padding:13px 15px;margin:12px 0;color:#fff;font-weight:750}.cj-guide .note{border:1px solid #34546e;background:#102b42;border-radius:10px;padding:12px 14px;margin:12px 0;color:#d9e8f5}.cj-guide .guide-table{width:100%;border-collapse:collapse;margin:10px 0 18px;font-size:14px}.cj-guide .guide-table th,.cj-guide .guide-table td{border:1px solid #34546e;padding:9px;text-align:left;vertical-align:top}.cj-guide .guide-table th{background:#183a56;color:#dff4ff}.cj-guide .subtle-note{color:#a9c5d9;font-size:13px}
+</style>
+<div class="cj-guide">
+<p><b>Crazy Joe</b> is a 20-wave alliance defense event. The goal is to protect member cities and the Alliance HQ while coordinating reinforcements to maximize both personal and alliance points.</p>
+<div class="rule">The key to a strong Crazy Joe run is coordination: reinforce one another, stay online for the special waves, and move troops to HQ only after Waves 9 and 19 have reached the cities you are defending.</div>
+<h3>1. Wave Schedule</h3>
+<table class="guide-table"><thead><tr><th>Wave</th><th>Target</th><th>What to do</th></tr></thead><tbody>
+<tr><td>1–6</td><td>All member cities</td><td>Reinforce your assigned alliance members.</td></tr>
+<tr><td>7</td><td>Online players only</td><td>Stay online. If you are not targeted, reinforce a member who is.</td></tr>
+<tr><td>8–9</td><td>All member cities</td><td>Continue the normal reinforcement rotation.</td></tr>
+<tr><td>10</td><td>Alliance HQ</td><td>After Wave 9 lands, recall the assigned march and reinforce HQ.</td></tr>
+<tr><td>11–13</td><td>All member cities</td><td>Return troops from HQ and resume city reinforcements.</td></tr>
+<tr><td>14</td><td>Online players only</td><td>Stay online and reinforce members who are targeted.</td></tr>
+<tr><td>15–16</td><td>All member cities</td><td>Continue the normal reinforcement rotation.</td></tr>
+<tr><td>17</td><td>Online players only</td><td>Stay online. If you are not targeted, support an online member.</td></tr>
+<tr><td>18–19</td><td>All member cities</td><td>Continue reinforcing. Prepare the HQ march only after Wave 19 lands.</td></tr>
+<tr><td>20</td><td>Alliance HQ</td><td>Send the assigned march and agreed troop composition to HQ.</td></tr>
+</tbody></table>
+<div class="note"><b>Important:</b> Waves 7, 14 and 17 target online players only. Being online gives you a chance to be targeted; if Joe does not attack your city, reinforce an alliance member who is being attacked.</div>
+<h3>2. Scoring – Defense Points vs. Kill Points</h3>
+<ul>
+<li><b>City owner:</b> receives city defense points for defending their city, even if their own troops are not stationed there.</li>
+<li><b>Reinforcements:</b> earn kill points from the enemy troops defeated by their reinforcing troops.</li>
+<li><b>Point-sharing principle:</b> leaving your own troops in a city that is already covered by reinforcements can reduce the kills available to those reinforcers. Coordinate troop swaps so members can earn points through both defending their own cities and reinforcing others.</li>
+<li><b>After two failed defenses:</b> Joe stops attacking that city. Recall your troops and send them to members who are still being attacked.</li>
+</ul>
+<p class="subtle-note">The exact point values depend on event difficulty. This guide focuses on the DYN coordination method rather than fixed point totals.</p>
+<h3>3. Team Rotation Strategy</h3>
+<ol>
+<li>Before the event, coordinate who reinforces whom. Use available marches to support alliance members.</li>
+<li>For Waves 1–9, keep your troops out reinforcing your assigned members rather than leaving unnecessary troops in your own city.</li>
+<li>Do not recall early. Wait until Wave 9 has hit the city you are reinforcing.</li>
+<li>Recall the assigned march and send it to Alliance HQ for Wave 10. Use the strongest available defensive lead and the ratio announced by leadership.</li>
+<li>After Wave 10, recall and send troops back to alliance members for Waves 11–19.</li>
+<li>After Wave 19 has hit the city you are reinforcing, recall the assigned march and send it to HQ for Wave 20.</li>
+<li>After the HQ wave, return troops to members who still need support.</li>
+</ol>
+<h3>4. Lazy AFK Points Strategy</h3>
+<ul>
+<li>If you cannot actively manage every march, send approximately <b>two-thirds of your troops to reinforce the strongest players</b>.</li>
+<li>This lets your troops contribute to kills while stronger players handle the incoming attacks.</li>
+<li>Use the remaining troops and available marches according to your account's capacity and the alliance assignments.</li>
+<li>Follow leadership's instructions for HQ Waves 10 and 20 whenever possible.</li>
+</ul>
+<div class="note"><b>Do not confuse the two strategies:</b> the Lazy AFK method means sending around 2/3 of your troops to the strongest players. It does not mean keeping 2/3 of your troops in your own city.</div>
+<h3>5. Reinforcement Coordination</h3>
+<ul>
+<li>Use the in-game map: select an alliance member's city and choose <b>Reinforce</b>.</li>
+<li>You can support more than one member if you have enough available marches.</li>
+<li>Keep communication open. Tell your group when Joe breaks through your defense for the first time and when your city has been defeated twice.</li>
+<li>Once a member has been defeated twice, redirect reinforcements to members who are still valid targets.</li>
+<li>A suggested DYN coordination limit is around <b>200,000 reinforcements per city</b>. This is an alliance planning guideline, not a game-enforced limit.</li>
+<li>Avoid unnecessary healing during the event if it causes your own troops to take kills that reinforcements could otherwise earn. Follow the event lead's instructions for your group.</li>
+</ul>
+<h3>6. HQ Defense – Heroes and Troop Composition</h3>
+<p>Waves 10 and 20 attack the Alliance HQ instead of member cities. Leadership should announce the HQ march, hero lead and troop composition before each wave. All players reinforcing HQ should follow the <b>same agreed troop ratio</b> so the garrison works as one formation.</p>
+<table class="guide-table"><thead><tr><th>Hero</th><th>Relevant first Expedition Skill</th><th>Effect from supplied guide notes</th></tr></thead><tbody>
+<tr><td>Bahiti / Sergey</td><td>Damage Taken Down</td><td>+20% Defense</td></tr>
+<tr><td>Patrick</td><td>Health Up</td><td>+25% HP; supplied HQ example uses around 60–65k troops.</td></tr>
+<tr><td>Walis Bokan</td><td>Enemy Damage Down</td><td>-20% Enemy Damage</td></tr>
+<tr><td>Philly</td><td>Defense Up</td><td>+10% Defense and +15% Attack</td></tr>
+</tbody></table>
+<p>Use your strongest available defensive lead for HQ. If your defensive heroes are underdeveloped, a stronger offensive hero may perform better. Choose based on your account and the alliance's tested setup.</p>
+<h4>Troop Ratio – Grow Into the Recommended Formation</h4>
+<ul>
+<li><b>Early game:</b> use the troops you have available. Infantry and Marksmen can be mixed according to your current troop development. Do not force an exact ratio when your account cannot support it yet.</li>
+<li><b>As you progress:</b> start working toward the recommended ratios and try to maintain them consistently.</li>
+<li><b>Higher difficulty:</b> follow the HQ composition agreed by DYN leadership. The researched high-difficulty strategy uses 100% Marksmen when the alliance is ready for it.</li>
+<li><b>HQ coordination:</b> everyone reinforcing HQ should use the same announced ratio for that wave.</li>
+</ul>
+<table class="guide-table"><thead><tr><th>Difficulty / stage</th><th>Wave 10</th><th>Wave 20</th><th>Notes</th></tr></thead><tbody>
+<tr><td>Early game / below 22</td><td colspan="2">Flexible – use available troops; Infantry and Marksmen may be mixed.</td><td>Build toward the recommended ratio as your account develops.</td></tr>
+<tr><td>Level 22</td><td>50% Infantry / 50% Lancers / 0% Marksmen</td><td>30% Infantry / 60% Lancers / 10% Marksmen</td><td>Use the same ratio among all HQ reinforcements for the relevant wave.</td></tr>
+<tr><td>Above 22</td><td>100% Marksmen</td><td>100% Marksmen</td><td>Use only when this high-difficulty strategy is suitable for the alliance.</td></tr>
+</tbody></table>
+<p class="subtle-note">These are DYN's researched strategy guidelines, not universal game-enforced ratios. Adapt them to troop tiers, account development and the alliance's tested results.</p>
+<h3>7. Formation Examples from the Supplied Material</h3>
+<ul>
+<li><b>Difficulty 10 – HQ Wave 10:</b> supplied example uses around 70,000 Infantry with the recommended defensive hero setup.</li>
+<li><b>Difficulty 20 – HQ Wave 20:</b> supplied example uses 25,000 Infantry / 25,000 Lancers / 50,000 Marksmen, with Jessie listed as the lead.</li>
+</ul>
+<p class="subtle-note">These are examples from the supplied reference material, not mandatory formations for every account.</p>
+<h3>8. Defender Hero Notes</h3>
+<ul>
+<li>Bahiti and Sergey provide a Defense-oriented skill.</li>
+<li>Patrick increases HP and is listed in the supplied notes for an HQ march of approximately 60–65k troops.</li>
+<li>Walis Bokan reduces enemy damage.</li>
+<li>Philly provides Defense and Attack bonuses.</li>
+<li>Strong offense can also be an effective defense. Compare the actual skill strength of your available heroes rather than selecting by hero name alone.</li>
+</ul>
+<h3>9. Quick Checklist</h3>
+<ul>
+<li>Coordinate reinforcement partners before the event starts.</li>
+<li>Stay online for Waves 7, 14 and 17.</li>
+<li>Do not recall reinforcements before Waves 9 and 19 have landed.</li>
+<li>Move the assigned march to HQ for Waves 10 and 20.</li>
+<li>Use the same announced troop ratio across all HQ reinforcements.</li>
+<li>After a city has been defeated twice, redirect its reinforcements.</li>
+<li>Communicate clearly when your city is breached and when you are out.</li>
+</ul>
+<p class="subtle-note">External mechanics cross-check: <a href="https://www.whiteoutsurvival-community.com/tools/wiki/events/crazy-joe-wsco.html" target="_blank" rel="noopener">WSCO Crazy Joe Guide</a> · <a href="https://www.whiteoutsurvivalwiki.com/chart-guide/crazy-joe/" target="_blank" rel="noopener">Whiteout Survival Wiki</a>. Alliance-specific troop ratios and hero examples above follow the DYN reference notes.</p>
+<p><b>DYN – Stronger Together. Unstoppable as One.</b></p>
+</div>`}
+
 function foundryGuide(){return `<style>
 .foundry-guide h3{color:#9edbff;margin:20px 0 8px}.foundry-guide .rule,.foundry-guide .mini{background:#102f4b;border:1px solid #3979a5;border-radius:12px;padding:12px;margin:10px 0}.foundry-guide .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}.foundry-guide table{width:100%;border-collapse:collapse;font-size:13px;margin:12px 0}.foundry-guide td,.foundry-guide th{border:1px solid #34546e;padding:7px;text-align:left}.foundry-guide th{background:#183a56}.foundry-guide figure{margin:14px 0;padding:8px;background:#0c2034;border:1px solid #34546e;border-radius:12px}.foundry-guide figure img{width:100%;height:auto}.foundry-guide figcaption{font-size:12px;color:#a9c5d9}.foundry-guide li,.foundry-guide p{color:#d9e8f5}
 </style><div class="foundry-guide">
@@ -317,6 +423,7 @@ function foundryGuide(){return `<style>
 function openGuide(id){
  let title=t(id),body="";
  if(id==="bear"){body=bearGuide()}
+ else if(id==="crazyjoe"){body=crazyJoeGuide()}
  else if(id==="ac"){body="Alliance Championship guide\\n\\nSign-up: Furnace level 10 minimum; at least 10 registered members for matchmaking. Register a march with active PvP buffs.\\n\\nPreparation: 5 rounds. Consider a 2–1 lane strategy: concentrate the strongest 40 players in two lanes and the rest in the third. Only the top 20 scores per lane fight; each march can fight up to twice per round.\\n\\nBattle: 5 rounds, one hour each. Review lane strength before each round."}else if(id==="foundry"){body=foundryGuide()}else{body="Guide coming soon."}
  document.querySelector("#modalcontent").innerHTML=`<span class="tag">PUBLIC GUIDE</span><h2>${title}</h2><div class="content">${body}</div>`;document.querySelector("#modal").classList.remove("hidden")
 }
