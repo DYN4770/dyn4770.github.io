@@ -210,6 +210,32 @@ header{background:rgba(16,13,34,.95);border-bottom-color:#41355f}
 .bear-card small{color:#bdc9da;font-size:10px;line-height:1.35}
 .bear-card .event-time{color:#65e4a4;font-weight:700}
 @media(max-width:720px){.info-timers{grid-template-columns:1fr}.info-card{grid-template-columns:auto auto minmax(0,1fr);padding:10px 13px}.info-card small{white-space:normal}.pet-info{border-right:0;border-bottom:1px solid #394563}.bear-card{min-height:104px}}
+/* v1.17 — regal violet with restrained gold accents */
+:root{--bg:#10091a;--panel:#1a1029;--panel2:#24163a;--line:#58406f;--ice:#f0e7ff;--blue:#d7c5ff;--muted:#c0b3ce;--white:#fbf7ff;--gold:#e7bd68;--green:#e7bd68}
+body{background:radial-gradient(ellipse at 18% -12%,#4b2865 0,transparent 42%),radial-gradient(ellipse at 94% 8%,#36214e 0,transparent 38%),#10091a;color:var(--white)}
+header{background:rgba(16,9,26,.96);border-bottom-color:#493457}
+.brand{color:#f6edff}.brand-mark{border-color:#9c7744;color:#f1cb79;background:linear-gradient(145deg,#4d3262,#21142f)}
+.navbtn,.lang,.action{background:#21152f;border-color:#554064;color:#f2eafa}
+.navbtn.active{background:#352044;outline:1px solid #d5ad61;color:#ffe5a7}
+.navbtn:hover,.action:hover{background:#39264b;border-color:#b78d4d}
+.action.primary{background:#563b65;border-color:#b58b4b;color:#fff3d5}
+.hero{background:linear-gradient(125deg,#3a234d 0%,#271735 62%,#1b1028 100%);border-color:#775987;box-shadow:0 18px 48px #08040d88,0 0 24px #b68a451c}
+.eyebrow,.tag{color:#d5b4f4}.search,.field{background:#180f24;border-color:#59426c;color:#fbf7ff}
+.sectionhead h2{color:#f0e7ff}.card{background:linear-gradient(145deg,#261737,#1a1029);border-color:#493657;box-shadow:0 8px 24px #08040d33}.card h3{color:#eee2ff}
+.primary-timers>.card{background:linear-gradient(135deg,#2d1c40,#1d122d 68%,#251733);border-color:#805a93;box-shadow:0 10px 28px #08040f66,0 0 18px #b67bdd18}
+.primary-timers .tag{color:#d8bbf4}.primary-timers .timer{color:#f4edff}.primary-timers .muted{color:#c9bcd4}
+.sunfire-card{border-color:#9d7544!important;background:linear-gradient(135deg,#32203f,#1e142a 70%,#382532)!important}.sunfire-card:after{background:radial-gradient(circle,#e7bd681c,transparent 68%)}.sunfire-card .timer{color:#ffe9bb}.sunfire-card h3{color:#fff4df}
+.info-timers{grid-template-columns:1fr 1fr;background:linear-gradient(100deg,#1a1127,#21152e);border-color:#4d3a5c}
+.info-card{background:transparent;border:0;box-shadow:none;color:#c4b8d2}.info-label,.pet-info .info-label,.lighthouse-info .info-label{color:#b4a2c4}.info-card strong{color:#ded3e9}.info-card small{color:#9788a8}.pet-info{border-right:1px solid #4d3a5c}
+.bear-card{background:linear-gradient(125deg,#29183c 0%,#20142f 65%,#302235 100%);border-color:#795992;box-shadow:0 6px 18px #08040f55}.bear-card .tag{color:#d9bdf0}.bear-card .timer{color:#f1e7ff}.bear-card small{color:#c6b8d2}.bear-card .event-time{color:#efc96f;font-weight:750}
+.timer-settings{border-color:#96764a;background:#30213b;color:#f5d98e}.timer-settings:hover{background:#4b3355}.timer-form label{color:#e4d9ef}.timer-form input{border-color:#675178;background:#180f24;color:#fff8e7}.timer-note{color:#bcaecb}.status{color:#efc96f}
+.notice{background:#241834;border-color:#644978;color:#e2d6eb}.modalbox{background:#21152f;border-color:#765989}
+.pill{background:#2b1c3b;border-color:#614a72;color:#eadcf8}.pill.public{background:#292034;border-color:#8e7042;color:#f0d38f}
+.hero-bonus{border-color:#8e7042;background:rgba(142,112,66,.16);color:#f0e4ca}.hero-bonus strong{color:#f0c96f}
+@media(max-width:720px){.info-timers{grid-template-columns:1fr}.pet-info{border-right:0;border-bottom:1px solid #4d3a5c}}
+/* v1.18 — warm gradient shading behind timer labels */
+.primary-timers .tag,.bear-card .tag{display:inline-flex;align-items:center;gap:6px;padding:4px 9px;border:1px solid rgba(215,174,107,.3);border-radius:7px;background:linear-gradient(100deg,rgba(76,47,99,.76) 0%,rgba(123,74,82,.58) 52%,rgba(192,131,60,.34) 100%);box-shadow:inset 0 1px rgba(255,241,214,.12),0 0 16px rgba(218,165,84,.13);text-shadow:0 1px 8px rgba(247,204,132,.2)}
+.sunfire-card .tag{color:#ffe0a0}
 </style>
 </head>
 <body>
@@ -289,7 +315,7 @@ header{background:rgba(16,13,34,.95);border-bottom-color:#41355f}
 </section>
 </main>
 <div id="modal" class="modal hidden" role="dialog" aria-modal="true"><div class="modalbox"><button class="action subtle close" onclick="closeModal()">✕</button><div id="modalcontent"></div></div></div>
-<footer>✦ DYN · Alliance Command Center · Prototype v1.16<br><span data-i="footer">Public alliance hub prototype. Suggestions are currently saved only in this browser and are not sent to DYN leadership.</span></footer>
+<footer>✦ DYN · Alliance Command Center · Prototype v1.19<br><span data-i="footer">Public alliance hub prototype. Suggestions are currently saved only in this browser and are not sent to DYN leadership.</span></footer>
 <script>
 const translations={
 en:{home:"Home",knowledge:"Knowledge",events:"Events",alliance:"Alliance Space",proposals:"Suggestions",eyebrow:"WHITEOUT SURVIVAL • DYN ALLIANCE HUB",title:"Stronger Together. Unstoppable as One.",subtitle:"A shared home for guides, event strategy and alliance coordination.",search:"Search guides, events and strategies...",timers:"Live Server Timers · UTC",resetnote:"Next reset · 00:00 UTC",featured:"Featured guides",publiclabel:"PUBLIC",memberlabel:"MEMBERS",mixedtitle:"Explore DYN Command Center",publicspace:"Knowledge & Guides",publicdesc:"Event guides, strategies and useful information for the DYN community.",memberspace:"Alliance Updates",memberdesc:"Announcements, event coordination and leadership updates shared with visitors.",knowtitle:"Knowledge Base",knowhint:"Public guides can be read by anyone. Community members can suggest corrections or new guides.",eventtitle:"Event Center",eventhint:"Public event guides, general schedules and DYN announcements.",acdesc:"Registration, lane strategy, battle phases, tiers and shop.",foundrydesc:"Battlefield overview, building control and team assignments.",trapdesc:"Rallies, formations, timing and participation tips.",crazyjoe:"Crazy Joe",cjshort:"20-wave defense, troop rotations, HQ formations and scoring strategy.",read:"Read guide →",draft:"Guide content to be added",alliancetitle:"Alliance Space",demo:"Public information space for DYN updates, event coordination and leadership announcements. Do not post confidential information here.",ops:"Operations & assignments",opsdesc:"Event owners, participant lists, rally leads and preparation notes.",leadership:"Leadership board",leadershipdesc:"Responsibilities, diplomacy contacts, polls and follow-ups.",suggestplan:"Suggest a plan",proposaltitle:"Community Suggestions",openlabel:"OPEN TO ALL",proposalhint:"Anyone can suggest a new guide, correction or event idea. R4/R5 review and approve changes before they become official.",submitidea:"Submit an idea",type:"Suggestion type",subject:"Title",details:"Details",submit:"Send suggestion",queue:"Suggestion queue (local demo)",footer:"Public alliance hub prototype. Suggestions are currently saved only in this browser and are not sent to DYN leadership.",reset:"Daily reset",ac:"Alliance Championship",foundry:"Foundry Battle",bear:"Bear Trap",bearshort:"Rally heroes, bonus mechanics, saved formations and event tips.",acshort:"Registration, 2–1 lane strategy, five rounds and rewards.",foundryshort:"Buildings, roles, phases and alliance battle assignments.",plan:"Alliance plan",pending:"Pending R4/R5 review",approve:"Approve (demo)",remove:"Remove (demo)",empty:"No suggestions yet.",sent:"Suggestion added to the local demo queue."},
@@ -493,6 +519,37 @@ function crazyJoeGuide(){return `
 <p><b>DYN – Stronger Together. Unstoppable as One.</b></p>
 </div>`}
 
+function acGuide(){return `<style>
+.ac-guide h3{color:#e0c17b;margin:22px 0 8px;font-size:19px}.ac-guide h4{color:#d5b4f4;margin:16px 0 6px}.ac-guide p,.ac-guide li{color:#e1d9e9}.ac-guide ul,.ac-guide ol{padding-left:22px}.ac-guide .rule{border:1px solid #94733f;background:linear-gradient(110deg,#34223e,#2b1b34 60%,#3c2d30);border-radius:12px;padding:13px 15px;margin:12px 0;color:#fff3d8;font-weight:700}.ac-guide .note{border:1px solid #584365;background:#21162d;border-radius:10px;padding:12px 14px;margin:12px 0;color:#e3d8eb}.ac-guide .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px}.ac-guide .mini{background:linear-gradient(145deg,#291a38,#1d1429);border:1px solid #584365;border-radius:12px;padding:12px}.ac-guide .mini b{color:#edcf8c}.ac-guide table{width:100%;border-collapse:collapse;font-size:13px;margin:12px 0}.ac-guide td,.ac-guide th{border:1px solid #574365;padding:9px;text-align:left;vertical-align:top}.ac-guide th{background:#392746;color:#f2d896}.ac-guide .source-note{font-size:12px;color:#bcaecb;margin-top:20px}
+@media(max-width:650px){.ac-guide table{min-width:570px}.ac-guide .table-wrap{overflow-x:auto}}
+</style><div class="ac-guide">
+<p class="subtle-note">DYN KNOWLEDGE BASE · ALLIANCE CHAMPIONSHIP</p>
+<div class="rule"><b>THE GOAL:</b> Six alliances meet across five rounds. Each round is played across three lanes; win at least two lanes to take the round. The event runs weekly from Monday 00:00 UTC to the following Monday 00:00 UTC.</div>
+<h3>1. Event Overview</h3>
+<div class="grid"><div class="mini"><b>Weekly cycle</b><p>Sign-up, matchmaking, five preparation windows, five one-hour battles, then completion and rewards.</p></div><div class="mini"><b>Three-lane scoring</b><p>Each round is decided by lane wins. A 2–1 result wins the round; you do not need to win all three lanes.</p></div><div class="mini"><b>Automatic combat</b><p>Registered marches fight automatically. Preparation and lane placement are where alliance leadership can make changes.</p></div></div>
+<h3>2. Sign-up · Monday 00:00 to Wednesday 23:00 UTC</h3>
+<ul><li><b>Chief requirement:</b> Furnace level 10 or higher and membership in the alliance.</li><li><b>Alliance requirement:</b> at least 10 registered members for matchmaking.</li><li>Register one march with heroes and troops in one lane. Follow the R4/R5 assignment; if no lane assignment has been announced, DYN’s default is the middle lane.</li><li>The registered march receives a score that determines its order within that lane. A higher score fights later, but does not guarantee victory.</li><li>Use suitable heroes, your best available gear, and appropriate troop tiers. The 50/20/30 mix (Infantry/Lancers/Marksmen) is a starting point, not a universal best ratio; adjust to your heroes, stats and troop strength.</li></ul>
+<div class="note"><b>Buff snapshot:</b> Register while applicable temporary combat bonuses are active, including relevant President/Minister, pet, battle and city bonuses. The march records a snapshot at deployment. If you register again after a buff expires, the new registration may replace the stronger one. Leaving and rejoining during sign-up resets the march.</div>
+<h3>3. Matchmaking · Wednesday 23:00 to Thursday 00:00 UTC</h3>
+<p>Once at least 10 members are registered, the alliance is matched with five other alliances of the same or a nearby tier for the five rounds. No player action is needed during matchmaking. An alliance entered in the Championship cannot disband before the event ends.</p>
+<h3>4. Preparation Phase · Five windows of 11 hours</h3>
+<p>There is one preparation window before each battle. R4/R5 can move registered members between the three lanes and set the alliance deployment. Opponent lane information may show their previous positions; their final changes are not visible.</p>
+<div class="rule"><b>DYN 2–1 PLAN:</b> Concentrate the strongest 40 eligible marches across two lanes, and place the remaining members in the third lane. The aim is to secure two lanes. Adapt after reviewing the available opponent data; the plan is a starting formation, not a guaranteed result.</div>
+<ul><li>Only the 20 highest-scored marches in each lane can fight, so avoid overcrowding a lane with more strong registrations than its capacity.</li><li>Check all three lanes during each preparation window and revise assignments if the matchup changes.</li><li>R4/R5 manage lane placement; members should keep their registration intact and follow the announced assignment.</li></ul>
+<h3>5. Battle Phase · Five rounds, one hour each</h3>
+<p>Each round matches your alliance against one opponent across all three lanes. Battles resolve automatically. The final round ends Saturday at 12:00 UTC.</p>
+<div class="grid"><div class="mini"><b>Participation limit</b><p>Only the top 20 scored marches in each lane are eligible. Each registered march can defeat up to two enemy marches in a round.</p></div><div class="mini"><b>KO1</b><p>Defeat one enemy march. The community guide lists: 10 × 5-minute Research Speedups, 20 × 10K Meat, 20 × 10K Wood, 40 × 1K Coal and 10 × 1K Iron.</p></div><div class="mini"><b>KO2</b><p>Defeat two enemy marches. The community guide lists: 15 × 5-minute Research Speedups, 30 × 10K Meat, 30 × 10K Wood, 55 × 1K Coal and 15 × 1K Iron.</p></div></div>
+<p class="subtle-note">KO rewards are per march and depend on the number of enemy marches defeated. Check the in-game reward panel if displayed quantities differ after an update.</p>
+<h3>6. Completion & Rewards · Saturday 12:00 to Monday 00:00 UTC</h3>
+<p>Check the final standings and collect alliance and personal rewards. Alliance stars determine its tier for the cycle:</p>
+<div class="table-wrap"><table><thead><tr><th>Tier</th><th>Alliance benefit</th></tr></thead><tbody><tr><td>Iron</td><td>Tier rewards based on final placement</td></tr><tr><td>Bronze</td><td>Tier rewards based on final placement</td></tr><tr><td>Silver</td><td>Alliance statue unlocks at Silver III; gathering bonus starts at 3%</td></tr><tr><td>Gold</td><td>Alliance statue provides 5% gathering bonus</td></tr><tr><td>Diamond</td><td>Alliance statue provides 7% gathering bonus</td></tr><tr><td>Ultimate</td><td>Alliance statue provides 10% gathering bonus; members receive the Knight cosmetic set for 14 days</td></tr></tbody></table></div>
+<p>The statue bonus applies to all four resource types. The temporary Knight set includes a city skin, march skin, nameplate and avatar frame; it is not permanent. Leaving or switching alliances during the event can affect which alliance’s rewards you receive, so check the current in-game rules before moving.</p>
+<h3>7. Alliance Championship Shop</h3>
+<p>Spend Championship Badges in the event shop. It follows the weekly Championship cycle and resets Monday at 00:00 UTC. The shop contains five recurring slots and five player-specific random slots.</p>
+<div class="grid"><div class="mini"><b>Recurring assortment</b><ul><li>Hardened Alloy</li><li>Polishing Solution</li><li>Design Plans from Generation 4 onward</li><li>Pet Manuals</li><li>Hero shards: Patrick before Generation 4; from Generation 4, shards for a hero two generations behind the state</li></ul></div><div class="mini"><b>Random assortment</b><ul><li>Pet items</li><li>Speedups</li><li>Hero shards</li><li>Manuals</li></ul><p>The five random offers can differ between players and weekly refreshes.</p></div></div>
+<h3>Quick Checklist</h3><ol><li>Register before Wednesday 23:00 UTC; confirm Furnace 10+ and the alliance reaches 10 registrations.</li><li>Set your assigned lane and march, with applicable buffs active before deploying.</li><li>Do not overwrite a stronger buffed registration with a weaker one.</li><li>During all five preparation windows, follow R4/R5’s lane assignments and the two-lane plan.</li><li>After Saturday 12:00 UTC, check tier, rewards, statue bonus and shop offers; shop refresh is Monday 00:00 UTC.</li></ol>
+<p class="source-note">Mechanics cross-checked against <a href="https://www.whiteoutsurvival.wiki/events/alliance-championship/" target="_blank" rel="noopener">Whiteout Survival Wiki</a> and <a href="https://wiki.wosforge.org/wiki/Alliance_Championship" target="_blank" rel="noopener">WOS Forge Alliance Championship guide</a>. These are community references, not an official DYN or publisher guide; in-game rules take precedence.</p>
+<p><b>DYN — Stronger Together. Unstoppable as One.</b></p></div>`}
 function foundryGuide(){return `<style>
 .foundry-guide h3{color:#9edbff;margin:20px 0 8px}.foundry-guide .rule,.foundry-guide .mini{background:#102f4b;border:1px solid #3979a5;border-radius:12px;padding:12px;margin:10px 0}.foundry-guide .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}.foundry-guide table{width:100%;border-collapse:collapse;font-size:13px;margin:12px 0}.foundry-guide td,.foundry-guide th{border:1px solid #34546e;padding:7px;text-align:left}.foundry-guide th{background:#183a56}.foundry-guide figure{margin:14px 0;padding:8px;background:#0c2034;border:1px solid #34546e;border-radius:12px}.foundry-guide figure img{width:100%;height:auto}.foundry-guide figcaption{font-size:12px;color:#a9c5d9}.foundry-guide li,.foundry-guide p{color:#d9e8f5}
 
@@ -524,7 +581,7 @@ function openGuide(id){
  let title=t(id),body="";
  if(id==="bear"){body=bearGuide()}
  else if(id==="crazyjoe"){body=crazyJoeGuide()}
- else if(id==="ac"){body="Alliance Championship guide\\n\\nSign-up: Furnace level 10 minimum; at least 10 registered members for matchmaking. Register a march with active PvP buffs.\\n\\nPreparation: 5 rounds. Consider a 2–1 lane strategy: concentrate the strongest 40 players in two lanes and the rest in the third. Only the top 20 scores per lane fight; each march can fight up to twice per round.\\n\\nBattle: 5 rounds, one hour each. Review lane strength before each round."}else if(id==="foundry"){body=foundryGuide()}else{body="Guide coming soon."}
+ else if(id==="ac"){body=acGuide()}else if(id==="foundry"){body=foundryGuide()}else{body="Guide coming soon."}
  document.querySelector("#modalcontent").innerHTML=`<span class="tag">PUBLIC GUIDE</span><h2>${title}</h2><div class="content">${body}</div>`;document.querySelector("#modal").classList.remove("hidden")
 }
 function closeModal(){document.querySelector("#modal").classList.add("hidden")}
@@ -586,6 +643,9 @@ function renderHeroDatabase(){
 if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",initHeroDatabase,{once:true});}else{initHeroDatabase();}
 </script>
 </body></html>
+
+
+
 
 
 
