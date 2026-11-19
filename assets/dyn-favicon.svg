@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
   <defs>
     <linearGradient id="frostStarIce" x1="14" y1="8" x2="52" y2="57" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#fffef7"/><stop offset=".38" stop-color="#c8f5ff"/><stop offset=".72" stop-color="#b8b4ff"/><stop offset="1" stop-color="#fff0cf"/>
+      <stop stop-color="#fffef7"/><stop offset=".38" stop-color="#c8f5ff"/><stop offset=".72" stop-color="#a5c8b3"/><stop offset="1" stop-color="#fff0cf"/>
     </linearGradient>
     <linearGradient id="frostStarEdge" x1="12" y1="9" x2="52" y2="54" gradientUnits="userSpaceOnUse">
       <stop stop-color="#fff5d2"/><stop offset=".35" stop-color="#abe5c8"/><stop offset=".68" stop-color="#87ecb9"/><stop offset="1" stop-color="#9cf2ff"/>
