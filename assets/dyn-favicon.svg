@@ -4,7 +4,7 @@
       <stop stop-color="#fffef7"/><stop offset=".38" stop-color="#c8f5ff"/><stop offset=".72" stop-color="#b8b4ff"/><stop offset="1" stop-color="#fff0cf"/>
     </linearGradient>
     <linearGradient id="frostStarEdge" x1="12" y1="9" x2="52" y2="54" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#fff5d2"/><stop offset=".35" stop-color="#f7c9ef"/><stop offset=".68" stop-color="#ac9bff"/><stop offset="1" stop-color="#9cf2ff"/>
+      <stop stop-color="#fff5d2"/><stop offset=".35" stop-color="#abe5c8"/><stop offset=".68" stop-color="#87ecb9"/><stop offset="1" stop-color="#9cf2ff"/>
     </linearGradient>
     <radialGradient id="frostStarTile" cx="0" cy="0" r="1" gradientTransform="matrix(52 48 -52 56 8 5)" gradientUnits="userSpaceOnUse">
       <stop stop-color="#304767"/><stop offset="1" stop-color="#151d35"/>
