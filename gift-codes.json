@@ -4,29 +4,11 @@
   "source": "WOS Rewards live catalog snapshot",
   "sourceUrl": "https://wosrewards.com/giftcodes",
   "counts": {
-    "active": 3,
+    "active": 2,
     "expired": 363,
-    "total": 366
+    "total": 365
   },
   "codes": [
-    {
-      "code": "VAX5g254j",
-      "status": "reported-active",
-      "addedAt": "2026-11-16",
-      "expires": "",
-      "source": "WOS Rewards gift code catalog",
-      "sourceUrl": "https://wosrewards.com/giftcodes",
-      "verifiedAt": "2026-11-19T16:30:00Z",
-      "notes": "Listed as Live by WOS Rewards (checked 2026-11-16). MrGuider lists expiry 2026-11-20.",
-      "auditHistory": [
-        {
-          "at": "2026-11-19T16:30:00Z",
-          "status": "reported-active",
-          "note": "Listed as Live by WOS Rewards (checked 2026-11-16). MrGuider lists expiry 2026-11-20.",
-          "source": "WOS Rewards gift code catalog"
-        }
-      ]
-    },
     {
       "code": "GuDokYTKOR",
       "status": "reported-active",
